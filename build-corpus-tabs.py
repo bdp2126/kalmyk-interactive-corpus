@@ -112,6 +112,7 @@ def build_site():
                 currentClip: null,
                 progressTimer: null,
                 sliderColor: '#4338CA',
+                isPlaying: false,
                 
                 get filteredItems() {
                     return this.items.filter(i => {
@@ -189,10 +190,12 @@ def build_site():
 
                         if (!audio.paused) {
                             audio.pause();
+                            this.isPlaying = false;
                             return;
                         }
 
                         audio.play();
+                        this.isPlaying = true;
 
                         this.startProgressLoop();
                         return;
@@ -340,7 +343,7 @@ def build_site():
                                 <tr class="hover:bg-gray-50 transition">
                                     <td class="px-6 py-4 align-top whitespace-nowrap text-xs text-gray-500">
                                         <span class="block font-semibold text-gray-700" x-text="item.File"></span>
-                                        <div class="mt-2 inline-flex items-center h-8 rounded-full bg-indigo-100 overflow-hidden">
+                                        <div class="mt-2 inline-flex items-center h-7 rounded-full bg-indigo-100 overflow-hidden">
 
                                         <button
                                             @click.stop="toggleAudio(item)"
@@ -348,11 +351,11 @@ def build_site():
 
                                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                                 <path
-                                                    x-show="!isCurrentClip(item) || currentAudioNode.paused"
-                                                    d="M7 5v10l8-5z"/></path>
+                                                    x-show="!isCurrentClip(item) || !isPlaying"
+                                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" fill-rule="evenodd"/></path>
                                                 <path
-                                                    x-show="isCurrentClip(item) && !currentAudioNode.paused"
-                                                    d="M6 5h3v10H6zm5 0h3v10h-3z"/></path>
+                                                    x-show="isCurrentClip(item) && isPlaying"
+                                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.25 8a.75.75 0 01.75-.75h.25a.75.75 0 01.75.75v4a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75V8zm2.5 0a.75.75 0 01.75-.75h.25a.75.75 0 01.75.75v4a.75.75 0 01-.75.75h-.25a.75.75 0 01-.75-.75V8z" clip-rule="evenodd" fill-rule="evenodd"/></path>
                                             </svg>
 
                                         </button>
