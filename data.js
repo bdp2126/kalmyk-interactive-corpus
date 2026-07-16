@@ -1,0 +1,211 @@
+const corpusData = [
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:00:00 - 0:00:04",
+        "StartMs": 0.0,
+        "EndMs": 4312.97,
+        "Orthography": "нег дәкч, лама хол һазрт зуульчлв",
+        "Transcription": "neg däkc lama xol ghazr-t zuulycl-v  ",
+        "Gloss": "one time monk distant land-DAT travel-PST1",
+        "Translation": "Once upon a time, a monk went on a journey to a very far-off place.\n"
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:00:08 - 0:00:13",
+        "StartMs": 7691.94,
+        "EndMs": 12578.64,
+        "Orthography": "хаалһнь хол, аһарнь нигт будта билә\n",
+        "Transcription": "хааlgһ-ny хоl аgһаr-ny nigt bud-ta bi-lä\n",
+        "Gloss": "road-POSS.3 far air-POSS.3 very fog-COM COP1-PST1",
+        "Translation": "The road was long and the weather very foggy."
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:00:16 - 0:00:23",
+        "StartMs": 16230.039999999999,
+        "EndMs": 22778.210000000003,
+        "Orthography": "хаалһдан дала цаган үрәһәд, тиигәд лама дотран зовад бәәв",
+        "Transcription": "хааlgһ-d-аn dаlа tsаg-аn ürä-gһäd, tiig-äd lаmа dotr-an zov-аd bää-v.\n",
+        "Gloss": "path-REFL.POSS.DAT much time-POSS.REFL.ACC lose-CVB.ANT do-CVB.ANT lama inside-REFL.POSS.ACC worry-CVB.ANT COP1-PST1",
+        "Translation": "Because it was taking so long, the monk began to get worried.\n"
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:00:27 - 0:00:30",
+        "StartMs": 26616.85,
+        "EndMs": 29872.85,
+        "Orthography": "үзгән геечкв гиҗ лама санв",
+        "Transcription": "üzg-än gее-ck-v gi-j lаmа sаn-v",
+        "Gloss": "pen-POSS.REFL.ACC lose-COMPL-PST1 say-CVB.IPFV monk think-PST1",
+        "Translation": "He thought that he was lost."
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:00:33 - 0:00:40",
+        "StartMs": 33309.7,
+        "EndMs": 39893.4,
+        "Orthography": "Тиигәд йовад йовҗ лам нег олн күн бәәх бәәшңгтал күрв.\n",
+        "Transcription": "tiigäd yоv-ad yоv-j lam neg oln kün bää-х bääšnggtаl kür-v",
+        "Gloss": "thus come-CVB.ANT come-CVB.IMPFV monk one many people stay-IRR building arrive-PST1",
+        "Translation": "Finally, he arrived at a camp full of people."
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:00:44 - 0:00:48",
+        "StartMs": 44318.34,
+        "EndMs": 47644.350000000006,
+        "Orthography": "әмтнә бәәдлнь йир әәлтә билә",
+        "Transcription": "ämtn-ä bädl-ny jir ääl-tä bi-lä",
+        "Gloss": "people-GEN appearance-POSS.3 very fear-COM COP1-PST2",
+        "Translation": "The people looked strange.\n"
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:00:52 - 0:00:54",
+        "StartMs": 51627.29,
+        "EndMs": 54486.7,
+        "Orthography": "лам тедниг таньсн го",
+        "Transcription": "lam tedn-ig tany-sn go\n",
+        "Gloss": "monk 3PL-ACC recognize-PTCP.PST NEG",
+        "Translation": "He did not recognize them."
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:00:58 - 0:01:03",
+        "StartMs": 57890.33,
+        "EndMs": 62919.03,
+        "Orthography": "мөрн деерән сууҗаһад герин терзәр шаһаһад хәләв",
+        "Transcription": "mörn deer-än cuu-ja-ghad ger-in terz-är sagha-gһаd хälä-v\n",
+        "Gloss": "horse on-POSS.REFL.ACC sit-CVB.IPFV-CVB.ANT house-GEN window-INST look-CVB.ANT look-PST1",
+        "Translation": "On his horse, the monk looked through the window of a house."
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:01:07 - 0:01:12",
+        "StartMs": 66822.81,
+        "EndMs": 71637.8,
+        "Orthography": "дотр-нь нег домбр цокчасн күүкд күн үзгдвә",
+        "Transcription": "dotr-ny neg dombr tsok-ca-sn küükd kün üz-gd-vä ",
+        "Gloss": "inside-POSS.3 one dombra hit-PROG-PTCP.PST female person see-PASS-PST1",
+        "Translation": "He saw a woman inside the house. She was playing dombra.\n"
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:01:17 - 0:01:22",
+        "StartMs": 76791.99,
+        "EndMs": 81783.1,
+        "Orthography": "тер күүкд күн ламыг үзәд гүүҗ ирәд мендлв",
+        "Transcription": "ter küükd kün lam-ig üz-äd güü-j ir-äd mendl-v\n",
+        "Gloss": "that female person monk-ACC see-PTCP.PST run-CVB.IPFV come-CVB.ANT greet-PST1",
+        "Translation": "Soon the women came out of the house. She ran to him and greeted him.\n"
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:01:25 - 0:01:29",
+        "StartMs": 85358.52,
+        "EndMs": 88867.92,
+        "Orthography": "күндтә ах, та ирвтә?\" гиҗ сурв",
+        "Transcription": "künd-tä ax ta ir-v-tä gi-j sur-v",
+        "Gloss": "respect-COM brother 2PL come-PST1-2PL say-CVB.IPFV ask-PST1",
+        "Translation": "“Dear brother, is it you that has arrived?” The woman said."
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:01:34 - 0:01:38",
+        "StartMs": 94222.77,
+        "EndMs": 97515.03,
+        "Orthography": "күн һарч ирәд мөрнь тосад авла",
+        "Transcription": "kün ghar-c ir-äd mör-ny tos-ad av-la",
+        "Gloss": "person exit-CVB.IPFV come-CVB.ANT horse-POSS.3 receive.CVB.ANT take.PST2",
+        "Translation": "The woman’s family took away his horse for him."
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:01:42 - 0:01:45",
+        "StartMs": 101639.29000000001,
+        "EndMs": 105148.52,
+        "Orthography": "гер дотран дуудад чигәһәр тоова",
+        "Transcription": "ger dotr-an duud-ad cigä-ghär too-va",
+        "Gloss": "house inside-POSS.REFL.ACC invite-CVB.ANT kumis-INS treat-PST1",
+        "Translation": "They invited him in, and offered him a cup of kumis.\n"
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:01:49 - 0:01:52",
+        "StartMs": 108652.05,
+        "EndMs": 111871.87,
+        "Orthography": "эн юн һазрви? лама сурҗ",
+        "Transcription": "en yun ghazrvi lama cur-j",
+        "Gloss": "this what place monk ask-CVB.IPFV",
+        "Translation": "‘What village is this?’ asked the monk."
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:01:57 - 0:02:01",
+        "StartMs": 116819.32999999999,
+        "EndMs": 120726.51999999999,
+        "Orthography": "махс мах бард гиҗ хәрү өгв",
+        "Transcription": "maxs max bard gi-j xärü ög-v",
+        "Gloss": "Makhs Makh Bard say-CVB.IPFV reply give-PST1",
+        "Translation": "“Makhs Makh Bard, it is called,” was the reply.\n"
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:02:05 - 0:02:10",
+        "StartMs": 125166.86,
+        "EndMs": 130014.78,
+        "Orthography": "лама чигәһән ууһад дуусна хөөнь зальврхан эклв",
+        "Transcription": "lama cigä-ghän uu-ghad duus-na xöö-ny zalyvrx-an ekl-v",
+        "Gloss": "monk kumis-POSS.REFL.ACC drink-CVB.ANT finish-NPST after.POSS.3 pray-? begin-PST1",
+        "Translation": "After finishing his drink, the monk began to say prayers."
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:02:15 - 0:02:21",
+        "StartMs": 134536.89,
+        "EndMs": 140904.16999999998,
+        "Orthography": "ном умшад эклсн цагтан тер әмтн (күмс) күүнә сүмсн болва",
+        "Transcription": "nom umš-ad ekl-sn tsag-tan ter ämtn (küms) küün-ä cümsn bol-va\n",
+        "Gloss": "book read-CVB.ANT begin-PTCP.PST time-POSS.REFL.DAT DIST people (people) people-GEN spirit COP2-PST1",
+        "Translation": "As soon as he began, the people around turned into spirits."
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:02:25 - 0:02:28",
+        "StartMs": 145261.25,
+        "EndMs": 148079.03,
+        "Orthography": "тер бәәшңг эҗ го бәәҗ",
+        "Transcription": "ter bääšngg ej go bääj\n",
+        "Gloss": "DIST village empty completely COP1-PTCP.IMFV",
+        "Translation": "The village was abandoned."
+    },
+    {
+        "File": "2025_03_06_Monk.TextGrid",
+        "AudioFile": "2025_03_06_Monk.wav",
+        "Time": "0:02:33 - 0:02:38",
+        "StartMs": 152636.1,
+        "EndMs": 157991.62999999998,
+        "Orthography": "кермнә толһа болн һосин өскәһәс нань юмн үлдсн го ",
+        "Transcription": "kermn-ä tolgha boln ghos-in öskä-ghäs nany yumn üldsn go",
+        "Gloss": "squirrel-GEN head and shoe-GEN heel-ABL other thing remain-CVB.ANT NEG",
+        "Translation": "Only the head of a squirrel and a shoe heel were left"
+    }
+];
