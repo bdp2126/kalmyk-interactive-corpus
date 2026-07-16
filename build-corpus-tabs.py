@@ -109,7 +109,9 @@ def build_site():
                 selectedTextType: 'all',
                 items: corpusData,
                 currentAudioNode: null,
-                audioTimeout: null,
+                currentClip: null,
+                progressTimer: null,
+                sliderColor: '#4338CA',
                 
                 get filteredItems() {
                     return this.items.filter(i => {
@@ -137,26 +139,109 @@ def build_site():
                 get files() {
                     return [...new Set(this.items.map(i => i.File))];
                 },
-                playAudio(audioFile, startMs, endMs) {
-                    let audioEl = document.getElementById('audio-' + audioFile);
-                    
-                    if (!audioEl) {
-                        alert('Audio file ' + audioFile + ' not found! Did you put it in the audio_files folder?');
+                isCurrentClip(item) {
+                    return this.currentClip &&
+                        this.currentClip.audioFile === item.AudioFile &&
+                        this.currentClip.start === item.StartMs &&
+                        this.currentClip.end === item.EndMs;
+                },
+
+                clipProgress(item) {
+                    if (!this.isCurrentClip(item) || !this.currentAudioNode) return 0;
+
+                    return Math.min(
+                        100,
+                        Math.max(
+                            0,
+                            ((this.currentAudioNode.currentTime * 1000 - item.StartMs) /
+                            (item.EndMs - item.StartMs)) * 100
+                        )
+                    );
+                },
+                startProgressLoop() {
+
+                    if (this.progressTimer) {
+                        cancelAnimationFrame(this.progressTimer);
+                    }
+
+                    const update = () => {
+
+                        if (this.currentAudioNode && !this.currentAudioNode.paused) {
+
+                            this.currentClip = {
+                                ...this.currentClip
+                            };
+
+                            this.progressTimer = requestAnimationFrame(update);
+                        }
+                    };
+
+                    this.progressTimer = requestAnimationFrame(update);
+                },
+
+                toggleAudio(item) {
+
+                    const audio = document.getElementById("audio-" + item.AudioFile);
+
+                    if (!audio) return;
+
+                    if (this.isCurrentClip(item)) {
+
+                        if (!audio.paused) {
+                            audio.pause();
+                            return;
+                        }
+
+                        audio.play();
+
+                        this.startProgressLoop();
                         return;
                     }
 
                     if (this.currentAudioNode) {
                         this.currentAudioNode.pause();
-                        clearTimeout(this.audioTimeout);
                     }
+
+                    this.currentAudioNode = audio;
+
+                    this.currentClip = {
+                        audioFile: item.AudioFile,
+                        start: item.StartMs,
+                        end: item.EndMs
+                    };
+
+                    audio.currentTime = item.StartMs / 1000;
+
+                    audio.play();
+
+                    this.startProgressLoop();
+
+                    audio.ontimeupdate = () => {
+
+                        if (audio.currentTime * 1000 >= item.EndMs) {
+
+                            audio.pause();
+                            audio.currentTime = item.StartMs / 1000;
+
+                            this.currentClip = null;
+                            this.currentAudioNode = null;
+                        }
+                    };
+
+                    audio.onended = () => {
+                        this.currentClip = null;
+                        this.currentAudioNode = null;
+                    };
+                },
+                seekClip(item, percent) {
+
+                    if (!this.isCurrentClip(item)) return;
+
+                    const duration = item.EndMs - item.StartMs;
+
+                    this.currentAudioNode.currentTime =
+                        (item.StartMs + duration * percent / 100) / 1000;
                     
-                    this.currentAudioNode = audioEl;
-                    audioEl.currentTime = startMs / 1000;
-                    audioEl.play().catch(e => console.error('Playback error:', e));
-                    
-                    this.audioTimeout = setTimeout(() => {
-                        audioEl.pause();
-                    }, endMs - startMs);
                 },
                 escapeRegExp(string) {
                     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -255,18 +340,60 @@ def build_site():
                                 <tr class="hover:bg-gray-50 transition">
                                     <td class="px-6 py-4 align-top whitespace-nowrap text-xs text-gray-500">
                                         <span class="block font-semibold text-gray-700" x-text="item.File"></span>
-                                        
-                                        <button @click="playAudio(item.AudioFile, item.StartMs, item.EndMs)"
-                                                class="mt-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 px-3 py-1.5 rounded-full inline-flex items-center gap-1.5 cursor-pointer transition shadow-sm font-semibold"
-                                                title="Click to play audio segment">
-                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
-                                            <span x-text="item.Time"></span>
+                                        <div class="mt-2 inline-flex items-center h-8 rounded-full bg-indigo-100 overflow-hidden">
+
+                                        <button
+                                            @click.stop="toggleAudio(item)"
+                                            class="h-full px-3 flex items-center justify-center bg-indigo-100 hover:bg-indigo-200 text-indigo-700">
+
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                <path
+                                                    x-show="!isCurrentClip(item) || currentAudioNode.paused"
+                                                    d="M7 5v10l8-5z"/></path>
+                                                <path
+                                                    x-show="isCurrentClip(item) && !currentAudioNode.paused"
+                                                    d="M6 5h3v10H6zm5 0h3v10h-3z"/></path>
+                                            </svg>
+
                                         </button>
+
+                                        <span
+                                            x-show="!isCurrentClip(item)"
+                                            class="px-3 h-full flex items-center text-sm font-semibold text-indigo-700"
+                                            x-text="item.Time">
+                                        </span>
+
+                                        <input
+                                            x-show="isCurrentClip(item)"
+                                            type="range"
+                                            min="0"
+                                            max="100"
+                                            :value="clipProgress(item)"
+                                            @input="seekClip(item, $event.target.value)"
+                                            :style="'accent-color:' + sliderColor"
+                                            class="w-36 mx-2 self-center">          
+
+                                    </div>
                                     </td>
                                     <td class="px-6 py-4 space-y-2">
                                         <div class="text-lg font-bold text-gray-900" x-html="highlight(item.Orthography)"></div>
-                                        <div class="text-sm font-medium text-indigo-700 italic" x-html="highlight(item.Transcription)"></div>
-                                        <div class="text-xs font-mono text-gray-500 tracking-wide uppercase bg-gray-55" x-html="highlight(item.Gloss)"></div>
+                                        <div x-data="{
+                                            words: item.Transcription.trim().split(/\s+/),
+                                            glosses: item.Gloss.trim().split(/\s+/)
+                                        }">
+                                            <div class="flex flex-wrap gap-x-2 gap-y-1">
+                                                <template x-for="(word, i) in words" :key="i">
+                                                    <div class="flex flex-col items-start">
+                                                        <div class="text-sm font-medium text-indigo-700 italic"
+                                                            x-html="highlight(word)">
+                                                        </div>
+                                                        <div class="text-xs font-mono text-gray-500 tracking-wide"
+                                                            x-html="highlight(glosses[i] || '')">
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </div>
                                         <div class="text-sm text-gray-700 border-l-2 border-indigo-200 pl-3 py-0.5" x-html="highlight(item.Translation)"></div>
                                     </td>
                                 </tr>
