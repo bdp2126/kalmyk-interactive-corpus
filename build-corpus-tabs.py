@@ -5,12 +5,14 @@ import datetime
 
 # Define folders
 TG_DIR = "./textgrids"
-AUDIO_DIR = "./audio_files"
 OUTPUT_DIR = "."
+
+# to convert files use:
+# for f in *.wav; do ffmpeg -i "$f" -ar 22050 "${f%.wav}.mp3"; done
+# in the audio directory
 
 # Ensure all folders exist
 os.makedirs(TG_DIR, exist_ok=True)
-os.makedirs(AUDIO_DIR, exist_ok=True)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def parse_textgrid(file_path):
@@ -57,7 +59,7 @@ def parse_textgrid(file_path):
         
         aligned_sentences.append({
             "File": base_filename,
-            "AudioFile": base_filename.replace('.TextGrid', '.wav'),
+            "AudioFile": base_filename.replace('.TextGrid', '.mp3'),
             "Time": f"{datetime.timedelta(seconds=round(start))} - {datetime.timedelta(seconds=round(end))}",
             "StartMs": start*1000,
             "EndMs": end*1000,
@@ -176,7 +178,7 @@ def build_site():
     <div class="max-w-7xl mx-auto px-4 py-8" x-data="corpusApp()">
         
         <template x-for="file in files" :key="file">
-            <audio :id="'audio-' + file.replace('.TextGrid', '.wav')" :src="'audio_files/' + file.replace('.TextGrid', '.wav')" preload="auto"></audio>
+            <audio :id="'audio-' + file.replace('.TextGrid', '.mp3')" :src="'audio_files/' + file.replace('.TextGrid', '.mp3')" preload="auto"></audio>
         </template>
 
         <div class="border-b border-gray-200 mb-8">

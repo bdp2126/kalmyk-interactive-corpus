@@ -88,7 +88,7 @@
     <div class="max-w-7xl mx-auto px-4 py-8" x-data="corpusApp()">
         
         <template x-for="file in files" :key="file">
-            <audio :id="'audio-' + file.replace('.TextGrid', '.wav')" :src="'audio_files/' + file.replace('.TextGrid', '.wav')" preload="auto"></audio>
+            <audio :id="'audio-' + file.replace('.TextGrid', '.mp3')" :src="'audio_files/' + file.replace('.TextGrid', '.mp3')" preload="auto"></audio>
         </template>
 
         <div class="border-b border-gray-200 mb-8">

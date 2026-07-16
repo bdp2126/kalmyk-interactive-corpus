@@ -1,7 +1,7 @@
 const corpusData = [
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:00:00 - 0:00:04",
         "StartMs": 0.0,
         "EndMs": 4312.97,
@@ -12,7 +12,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:00:08 - 0:00:13",
         "StartMs": 7691.94,
         "EndMs": 12578.64,
@@ -23,7 +23,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:00:16 - 0:00:23",
         "StartMs": 16230.039999999999,
         "EndMs": 22778.210000000003,
@@ -34,7 +34,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:00:27 - 0:00:30",
         "StartMs": 26616.85,
         "EndMs": 29872.85,
@@ -45,7 +45,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:00:33 - 0:00:40",
         "StartMs": 33309.7,
         "EndMs": 39893.4,
@@ -56,7 +56,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:00:44 - 0:00:48",
         "StartMs": 44318.34,
         "EndMs": 47644.350000000006,
@@ -67,7 +67,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:00:52 - 0:00:54",
         "StartMs": 51627.29,
         "EndMs": 54486.7,
@@ -78,7 +78,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:00:58 - 0:01:03",
         "StartMs": 57890.33,
         "EndMs": 62919.03,
@@ -89,7 +89,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:01:07 - 0:01:12",
         "StartMs": 66822.81,
         "EndMs": 71637.8,
@@ -100,7 +100,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:01:17 - 0:01:22",
         "StartMs": 76791.99,
         "EndMs": 81783.1,
@@ -111,7 +111,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:01:25 - 0:01:29",
         "StartMs": 85358.52,
         "EndMs": 88867.92,
@@ -122,7 +122,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:01:34 - 0:01:38",
         "StartMs": 94222.77,
         "EndMs": 97515.03,
@@ -133,7 +133,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:01:42 - 0:01:45",
         "StartMs": 101639.29000000001,
         "EndMs": 105148.52,
@@ -144,7 +144,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:01:49 - 0:01:52",
         "StartMs": 108652.05,
         "EndMs": 111871.87,
@@ -155,7 +155,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:01:57 - 0:02:01",
         "StartMs": 116819.32999999999,
         "EndMs": 120726.51999999999,
@@ -166,7 +166,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:02:05 - 0:02:10",
         "StartMs": 125166.86,
         "EndMs": 130014.78,
@@ -177,7 +177,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:02:15 - 0:02:21",
         "StartMs": 134536.89,
         "EndMs": 140904.16999999998,
@@ -188,7 +188,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:02:25 - 0:02:28",
         "StartMs": 145261.25,
         "EndMs": 148079.03,
@@ -199,7 +199,7 @@ const corpusData = [
     },
     {
         "File": "2025_03_06_Monk.TextGrid",
-        "AudioFile": "2025_03_06_Monk.wav",
+        "AudioFile": "2025_03_06_Monk.mp3",
         "Time": "0:02:33 - 0:02:38",
         "StartMs": 152636.1,
         "EndMs": 157991.62999999998,
