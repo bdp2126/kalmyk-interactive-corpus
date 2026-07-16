@@ -18,7 +18,7 @@ const corpusData = [
         "EndMs": 16846.329999999998,
         "Orthography": "Сән сән сән көдлмштән",
         "Transcription": "sän sän sän ködlmsh-t-än",
-        "Gloss": "good good good work-DAT-POSS.REFL",
+        "Gloss": "good good good work-DAT=RP",
         "Translation": "Good, good, good, to your work."
     },
     {
@@ -84,7 +84,7 @@ const corpusData = [
         "EndMs": 54662.86,
         "Orthography": "мадн борцг кеһәд идхм арвн дөрв арвн дөрвнд",
         "Transcription": "madn bortsg ke-ghäd id-x-m arvn dörv arvn dörvn-d",
-        "Gloss": "1PL.GEN boortsog make-CVB.ANT eat-INF-COP.AFF ten four ten four-DAT",
+        "Gloss": "1PL.GEN boortsog make-CVB.PRF eat-INF-COP.AFF ten four ten four-DAT",
         "Translation": "We will eat our boortsog on the 14th."
     },
     {
@@ -106,7 +106,7 @@ const corpusData = [
         "EndMs": 60963.520000000004,
         "Orthography": "арвн негн болҗана тиигхлә",
         "Transcription": "arvn negn bol-ja-na tiig-xlä",
-        "Gloss": "ten one COP2-PROG-NPST do.so-CVB.COND",
+        "Gloss": "ten one COP2-PROG-NPST do.so-CVB.SUCC",
         "Translation": "She will do so on the eleventh."
     },
     {
@@ -183,7 +183,7 @@ const corpusData = [
         "EndMs": 8342.04,
         "Orthography": "дала-әдл наадһа үзвв",
         "Transcription": "dalaädl naadgha üz-v-v",
-        "Gloss": "many thing see-PST1-1SG",
+        "Gloss": "many thing see-PST-1SG",
         "Translation": "I saw lots of cool things."
     },
     {
@@ -205,7 +205,7 @@ const corpusData = [
         "EndMs": 76220.42,
         "Orthography": "би сафари гидг һазрт күрәд дала адусн үзвв",
         "Transcription": "bi safari gi-dg ghazr-t kür-äd dala adusn üz-v-v",
-        "Gloss": "1SG safari say-PTCP.HAB land-DAT reach-CVB.ANT animal see-PST1-1SG",
+        "Gloss": "1SG safari say-HAB land-DAT reach-CVB.PRF animal see-PST-1SG",
         "Translation": "I went on a safari and saw lots of animals."
     },
     {
@@ -216,7 +216,7 @@ const corpusData = [
         "EndMs": 95005.96,
         "Orthography": "би сафари гидг сафари гидг һазрт күрәд дала адусн үзвв",
         "Transcription": "bi safari gi-dg safari gi-dg ghazr-t kür-äd dala adusn üz-v-v",
-        "Gloss": "1S safari say-PTCP.HAB safari say-PTCP.HAB land-DAT reach-CVB.ANT animal see-PST1-1SG",
+        "Gloss": "1S safari say-HAB safari say-HAB land-DAT reach-CVB.PRF animal see-PST-1SG",
         "Translation": "I went on a safari and saw lots of animals."
     },
     {
@@ -238,7 +238,7 @@ const corpusData = [
         "EndMs": 140816.34,
         "Orthography": "би олн зүсн шовуд үзвв",
         "Transcription": "bi oln züsn shovu-d üz-v-v",
-        "Gloss": "1S many kind bird-PL see-PST1-1SG",
+        "Gloss": "1S many kind bird-PL see-PST-1SG",
         "Translation": "I saw many kinds of birds."
     },
     {
@@ -249,7 +249,7 @@ const corpusData = [
         "EndMs": 145967.78,
         "Orthography": "олн зүсн шовуд үзвв",
         "Transcription": "oln züsn shovu-d üz-v-v",
-        "Gloss": "many kind bird-PL see-PST1-1SG",
+        "Gloss": "many kind bird-PL see-PST-1SG",
         "Translation": "I saw many kinds of birds."
     },
     {
@@ -480,7 +480,7 @@ const corpusData = [
         "EndMs": 25594.59,
         "Orthography": "гертән гертән сулд цагар ямаран юм келәд келәд келҗ болна",
         "Transcription": "ger-t-än ger-t-än suld tsag-ar yamaran yum kel-äd kel-äd kel-j bol-na-∅",
-        "Gloss": "house-DAT-POSS.REFL house-DAT-POSS.REFL free time-INST how thing speak-CVB.ANT speak-CVB.ANT speak-CVB.NPFV COP2-NPST-3SG",
+        "Gloss": "house-DAT=RP house-DAT=RP free time-INST how thing speak-CVB.PRF speak-CVB.PRF speak-CVB.NPFV COP2-NPST-3SG",
         "Translation": "Living in Kalmykia, what did you do in your free time?"
     },
     {
@@ -491,7 +491,7 @@ const corpusData = [
         "EndMs": 35931.53,
         "Orthography": "би хальмгт сулд цагтан сулд цагтан көгҗм даслав",
         "Transcription": "bi xal'mg-t suld tsag-t-an suld tsag-t-an kögjm das-la-v",
-        "Gloss": "1SG Kalmykia-DAT free time-DAT-POSS.REFL free time-DAT-POSS.REFL music study-PST2-1SG",
+        "Gloss": "1SG Kalmykia-DAT free time-DAT=RP free time-DAT=RP music study-PST.PRF-1SG",
         "Translation": "During my free time in Kalmykia, I studied music."
     },
     {
@@ -502,7 +502,7 @@ const corpusData = [
         "EndMs": 40948.1,
         "Orthography": "көгҗм дасхт дурта биләв",
         "Transcription": "kögjm das-x-t dur-ta bi-lä-v",
-        "Gloss": "music study-PTCP.FUT-DAT love COP1-PST2-1SG",
+        "Gloss": "music study-INF-DAT love COP1-PST.PRF-1SG",
         "Translation": "I loved studying music."
     },
     {
@@ -513,7 +513,7 @@ const corpusData = [
         "EndMs": 49759.25,
         "Orthography": "дәкәд еврәннь нәәҗнртәһән хамдан наддг биләвидн",
         "Transcription": "däkäd evr-än=n' nääj-nr-tä-ghän xamdan nad-dg bi-lä-vidn",
-        "Gloss": "more self-POSS.REFL=POSS.3SG friend-PL-SOC-POSS.REFL always play-PTCP.HAB COP1-PST2-1PL",
+        "Gloss": "more self=RP=POSS.3SG friend-PL-SOC=RP always play-HAB COP1-PST.PRF-1PL",
         "Translation": "And my friends and I would always play together."
     },
     {
@@ -524,7 +524,7 @@ const corpusData = [
         "EndMs": 54040.0,
         "Orthography": "харһад сәәхн суудг биләвидн",
         "Transcription": "xar-ghad sääxn suu-dg bi-lä-vidn",
-        "Gloss": "meet-CVB.ANT beautiful sit-PTCP.HAB COP1-PST2-1PL",
+        "Gloss": "meet-CVB.PRF beautiful sit-HAB COP1-PST.PRF-1PL",
         "Translation": "It was always beautiful (?)"
     }
 ];
