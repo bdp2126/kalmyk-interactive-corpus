@@ -8,7 +8,7 @@ TG_DIR = "./textgrids"
 OUTPUT_DIR = "."
 
 # to convert files use:
-# for f in *.wav; do ffmpeg -i "$f" -ar 22050 "${f%.wav}.mp3"; done
+# for f in *.wav; do ffmpeg -i "$f" -ar 22050 -write_xing 0 "${f%.wav}.mp3"; done
 # in the audio directory
 
 # Ensure all folders exist
