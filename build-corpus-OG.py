@@ -1,5 +1,4 @@
 import os
-import shutil
 import json
 import textgrid
 import datetime
@@ -7,14 +6,12 @@ import datetime
 # Define folders
 TG_DIR = "./textgrids"
 AUDIO_DIR = "./audio_files"
-OUTPUT_DIR = "./web_corpus"
-WEB_AUDIO_DIR = "./web_corpus/audio"
+OUTPUT_DIR = "."
 
 # Ensure all folders exist
 os.makedirs(TG_DIR, exist_ok=True)
 os.makedirs(AUDIO_DIR, exist_ok=True)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
-os.makedirs(WEB_AUDIO_DIR, exist_ok=True)
 
 def parse_textgrid(file_path):
     # check if files exist
@@ -83,12 +80,6 @@ def build_site():
     for file in files:
         print(f"Processing Text: {file}")
         all_data.extend(parse_textgrid(os.path.join(TG_DIR, file)))
-
-    # Copy audio files to web directory
-    audio_files = [f for f in os.listdir(AUDIO_DIR) if f.endswith('.wav')]
-    for audio in audio_files:
-        print(f"Copying Audio: {audio}")
-        shutil.copy2(os.path.join(AUDIO_DIR, audio), os.path.join(WEB_AUDIO_DIR, audio))
 
     # Write data.js
     with open(os.path.join(OUTPUT_DIR, "data.js"), "w", encoding="utf-8") as f:
@@ -184,7 +175,7 @@ def build_site():
     <div class="max-w-7xl mx-auto px-4 py-8" x-data="corpusApp()">
         
         <template x-for="file in files" :key="file">
-            <audio :id="'audio-' + file.replace('.TextGrid', '.wav')" :src="'audio/' + file.replace('.TextGrid', '.wav')" preload="auto"></audio>
+            <audio :id="'audio-' + file.replace('.TextGrid', '.wav')" :src="'audio_files/' + file.replace('.TextGrid', '.wav')" preload="auto"></audio>
         </template>
 
         <header class="mb-8 border-b pb-6 border-gray-200">
@@ -275,7 +266,7 @@ def build_site():
     with open(os.path.join(OUTPUT_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(html_content)
 
-    print(f"\nSuccess! Your interactive web corpus is ready in the '{OUTPUT_DIR}' folder.")
+    print(f"\nSuccessfully compiled corpus!")
 
 if __name__ == "__main__":
     build_site()
