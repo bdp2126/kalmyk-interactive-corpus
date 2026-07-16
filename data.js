@@ -17,7 +17,7 @@ const corpusData = [
         "StartMs": 15222.48,
         "EndMs": 16846.329999999998,
         "Orthography": "Сән сән сән көдлмштән",
-        "Transcription": "sän sän sän ködlmsh-t-än",
+        "Transcription": "sän sän sän ködlmsh-t=än",
         "Gloss": "good good good work-DAT=RP",
         "Translation": "Good, good, good, to your work."
     },
@@ -479,7 +479,7 @@ const corpusData = [
         "StartMs": 19203.24,
         "EndMs": 25594.59,
         "Orthography": "гертән гертән сулд цагар ямаран юм келәд келәд келҗ болна",
-        "Transcription": "ger-t-än ger-t-än suld tsag-ar yamaran yum kel-äd kel-äd kel-j bol-na-∅",
+        "Transcription": "ger-t=än ger-t=än suld tsag-ar yamaran yum kel-äd kel-äd kel-j bol-na-∅",
         "Gloss": "house-DAT=RP house-DAT=RP free time-INST how thing speak-CVB.PRF speak-CVB.PRF speak-CVB.NPFV COP2-NPST-3SG",
         "Translation": "Living in Kalmykia, what did you do in your free time?"
     },
@@ -490,7 +490,7 @@ const corpusData = [
         "StartMs": 26519.37,
         "EndMs": 35931.53,
         "Orthography": "би хальмгт сулд цагтан сулд цагтан көгҗм даслав",
-        "Transcription": "bi xal'mg-t suld tsag-t-an suld tsag-t-an kögjm das-la-v",
+        "Transcription": "bi xal'mg-t suld tsag-t=an suld tsag-t=an kögjm das-la-v",
         "Gloss": "1SG Kalmykia-DAT free time-DAT=RP free time-DAT=RP music study-PST.PRF-1SG",
         "Translation": "During my free time in Kalmykia, I studied music."
     },
@@ -512,7 +512,7 @@ const corpusData = [
         "StartMs": 42893.659999999996,
         "EndMs": 49759.25,
         "Orthography": "дәкәд еврәннь нәәҗнртәһән хамдан наддг биләвидн",
-        "Transcription": "däkäd evr-än=n' nääj-nr-tä-ghän xamdan nad-dg bi-lä-vidn",
+        "Transcription": "däkäd evr=än=n' nääj-nr-tä=ghän xamdan nad-dg bi-lä-vidn",
         "Gloss": "more self=RP=POSS.3SG friend-PL-SOC=RP always play-HAB COP1-PST.PRF-1PL",
         "Translation": "And my friends and I would always play together."
     },
